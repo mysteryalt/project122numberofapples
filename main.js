@@ -2,7 +2,7 @@ screen_width = 0;
 screen_height = 0;
 apple = "";
 speak_data ="";
-to_number= "";
+to_number= 0;
 
 x = 0;
 y = 0;
@@ -58,23 +58,23 @@ function setup() {
 
 function draw() {
   if(draw_apple == "set")
-  {
-    document.getElementById("status").innerHTML = to_number + " Apples drawn";
-    draw_apple = "";
-  }
+  
+   {
 
   for(var i = 1; i <= to_number; i++)
   {
-    x = Math.floor(Math.random() * 700)
-    y = Math.floor(Math.random()* 400)
+    x = Math.floor(Math.random() * 700);
+    y = Math.floor(Math.random()* 400);
 
-    image(apple , x , y , 50 , 50)
-
-    document.getElementById("status").innerHTML = to_number + " apples drawn"
-    speak_data = to_number + "apples drawn"
-    speak()
-    
+    image(apple , x , y , 50 , 50);
   }
+
+    document.getElementById("status").innerHTML = to_number + " apples drawn";
+    speak_data = to_number + "apples drawn";
+    speak();
+    draw_apple = "";
+    
+}
 
   
 }
